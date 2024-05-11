@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.content {
+  border: black solid 2px;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Navbar icons */
+
+.menu-icon,
+.search-icon,
+.mic-icon,
+.mic-icon-center,
+.camera-icon,
+.notification-icon {
+  border-radius: 100%;
+  padding: 10px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide everything but search icon for small screen */
+
+.menu-icon,
+.mic-icon,
+.mic-icon-center,
+.camera-icon,
+.notification-icon {
+  display: none;
+}
+
+.menu-icon:hover,
+.search-icon:hover,
+.mic-icon:hover,
+.mic-icon-center:hover,
+.camera-icon:hover,
+.notification-icon:hover {
+  background-color: #e5e5e5;
+}
+
+/* Navbar start section */
+
+.start {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  gap: 10px;
+  padding: 8px;
+  align-items: center;
+}
+
+.start > img {
+  width: 90px;
+}
+
+/* Navbar center section */
+
+.center {
+  display: none;
+  flex: 2;
+}
+
+/* Navbar end section */
+
+.end {
+  display: flex;
+  flex-direction: row;
+
+  padding: 8px;
+  align-items: center;
+  justify-content: end;
+  flex: 1;
+}
+
+.end > img {
+  width: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+/* Main section */
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar */
+
+.sidebar-sm {
+  display: none;
+}
+
+.sidebar-full {
+  display: none;
+}
+
+/* Content section */
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-gap: 1em;
+
+  flex: 1;
+}
+
+.video {
+  border: red solid 2px;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  /* Display the menu, mic, camera, and notification icons for medium screen */
+  .menu-icon,
+  .mic-icon,
+  .camera-icon,
+  .notification-icon {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar-sm {
+    display: flex;
+    flex-direction: column;
+
+    flex: 0;
+  }
+
+  .side-icon {
+    width: 80px;
+    height: 100px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .side-icon:hover {
+    background-color: #f2f2f2;
+  }
+
+  .side-icon svg {
+    width: 25px;
+  }
+
+  .side-icon > .text {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  /* Display the center section for large screens */
+  .center {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center > form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: stretch;
+    flex: 1;
+  }
+
+  .center > form > input {
+    padding: 8px 20px;
+    border: #d3d3d3 solid 2px;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+  }
+
+  .center > form > input:focus {
+    border: #0040b4 solid 1px;
+    outline: #0040b4 solid 1px;
+  }
+
+  .center > form > button {
+    border: #d3d3d3 solid;
+    border-width: 2px 2px 2px 0px;
+    border-radius: 0px 25px 25px 0px;
+    padding: 5px;
+    height: 39px;
+    width: 80px;
+  }
+
+  .center > form svg {
+    height: 24px;
+    width: 24px;
+    margin-left: 15px;
+  }
+
+  .center > form > button:focus {
+    border: #0040b4 solid 1px;
+    outline: #0040b4 solid 1px;
+  }
+
+  /* Hide the search and right mic icons */
+  .search-icon,
+  .mic-icon {
+    display: none;
+  }
+
+  /* Display the center mic icon */
+
+  .mic-icon-center {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar-sm {
+    display: none;
+  }
+
+  .sidebar-full {
+    display: flex;
+    flex-direction: column;
+    flex: 0 250px;
+
+    height: 100vh;
+    overflow-y: auto;
+
+    padding: 8px;
+  }
+
+  .subscriptions > p,
+  .explore > p,
+  .mf-ytb > p {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 25px auto;
+    gap: 20px;
+
+    align-items: center;
+    justify-items: stretch;
+
+    padding: 10px;
+
+    border-radius: 10px;
+  }
+
+  .item:hover {
+    background-color: #f2f2f2;
+  }
+
+  .item > .text {
+    font-size: 14px;
+  }
+
+  .item > img {
+    width: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  .divider {
+    border: #e5e5e5 solid 1px;
+    margin: 10px 0px;
+  }
+}
